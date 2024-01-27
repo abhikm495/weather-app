@@ -11,6 +11,7 @@ import "./Description.css";
 const Description = ({ weather, units }) => {
   console.log(units);
   const tempUnit = units === "imperial" ? "°F" : "°C";
+  const windUnit = units === "imperial" ? "m/h" : "m/s";
   const cards = [
     {
       id: 1,
@@ -52,7 +53,7 @@ const Description = ({ weather, units }) => {
       icon: <BsSpeedometer2 />,
       title: "wind-speed",
       data: weather.speed,
-      unit: "m/s",
+      unit: windUnit,
     },
   ];
 
