@@ -5,6 +5,7 @@ import Description from "./components/Description/Description";
 import { useEffect, useRef, useState } from "react";
 import getWeatherData from "./WeatherService.js";
 import Globe from "./components/Globe/Globe.js";
+import Header from "./components/Header/Header.js";
 function App() {
   const [error, setError] = useState(null);
   const [city, setCity] = useState("Bangalore");
@@ -36,7 +37,7 @@ function App() {
         if (data.temp <= threshold) setBg(cold);
         else setBg(hot);
       } catch (error) {
-        setError(`Enter Valid City`);
+        setError(`Invalid City`);
         return;
       }
     };
@@ -47,17 +48,12 @@ function App() {
       <div className="overlay">
         {weather && (
           <div className="container">
-            <div className="section section_inputs">
-              <form className="form" onSubmit={handleSubmit}>
-                <input type="text" name="city" placeholder="Enter City..." />
-                <button>Search</button>
-              </form>
-
-              {error && <span className="error-message">{error}</span>}
-              <button onClick={hanldeUnit} ref={unitButton}>
-                °C
-              </button>
-            </div>
+            <Header
+              handleSubmit={handleSubmit}
+              hanldeUnit={hanldeUnit}
+              error={error}
+              unitButton={unitButton}
+            />
             <Globe latitude={weather.lat} longitude={weather.lon} />
             <div className="section section_temperature">
               <div className="icon">
