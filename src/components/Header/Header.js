@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import "./Header.css";
 const Header = ({ handleSubmit, error, hanldeUnit, unitButton }) => {
   return (

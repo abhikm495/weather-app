@@ -15,3 +15,17 @@
     width: 70%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  #Canvas-container {
+    margin-bottom: 4rem;
+    margin-top: -190px;
+  }
+}
+
+@media screen and (max-width: 326px) {
+  #Canvas-container {
+    margin-bottom: 4rem;
+    margin-top: -290px;
+  }
+}

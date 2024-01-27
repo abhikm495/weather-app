@@ -65,7 +65,7 @@ function App() {
                   src={weather.IconUrl}
                   alt="weather icon"
                 />
-                <h3>{weather.description}</h3>
+                <h3 className="weather-description">{weather.description}</h3>
               </div>
               <div className="temperature">
                 <h1>{`${Math.round(weather.temp)} ${

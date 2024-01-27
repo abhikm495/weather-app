@@ -9,7 +9,6 @@ import { FaTemperatureEmpty } from "react-icons/fa6";
 import "./Description.css";
 
 const Description = ({ weather, units }) => {
-  console.log(units);
   const tempUnit = units === "imperial" ? "°F" : "°C";
   const windUnit = units === "imperial" ? "m/h" : "m/s";
   const cards = [

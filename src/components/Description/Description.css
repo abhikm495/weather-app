@@ -38,3 +38,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media screen and (max-width: 386px) {
+  .section_description {
+    gap: 1rem;
+  }
+  .card {
+    padding: 0.2rem;
+  }
+}
