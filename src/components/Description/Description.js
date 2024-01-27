@@ -68,7 +68,7 @@ const Description = ({ weather, units }) => {
             <div>
               <h2>
                 {item.data}
-                {tempUnit}
+                {item.unit}
               </h2>
             </div>
           </div>
