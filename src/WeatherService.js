@@ -1,5 +1,6 @@
 const API_KEY = "5b6e990e9df5119bded403a926127545";
 
+// coord: {lon: 77.6033, lat: 12.9762}
 const makeIconUrl = (iconId) =>
   `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 
@@ -13,6 +14,7 @@ const getWeatherData = async (city, unit = "metric") => {
     wind: { speed },
     sys: { country },
     name,
+    coord: { lon, lat },
   } = jsonData;
   const { description, icon } = weather[0];
   return {
@@ -27,6 +29,8 @@ const getWeatherData = async (city, unit = "metric") => {
     speed,
     country,
     name,
+    lon,
+    lat,
   };
 };
 export default getWeatherData;

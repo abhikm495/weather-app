@@ -4,6 +4,7 @@ import "./index.css";
 import Description from "./components/Description/Description";
 import { useEffect, useRef, useState } from "react";
 import getWeatherData from "./WeatherService.js";
+import Globe from "./components/Globe/Globe.js";
 function App() {
   const [error, setError] = useState(null);
   const [city, setCity] = useState("Bangalore");
@@ -57,13 +58,14 @@ function App() {
                 °C
               </button>
             </div>
+            <Globe latitude={weather.lat} longitude={weather.lon} />
             <div className="section section_temperature">
               <div className="icon">
                 <h3>
                   {weather.name},{weather.country}
                 </h3>
                 <img
-                  style={{ height: "40px" }}
+                  style={{ width: "100px", height: "100px" }}
                   src={weather.IconUrl}
                   alt="weather icon"
                 />

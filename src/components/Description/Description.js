@@ -8,8 +8,9 @@ import { FaTemperatureEmpty } from "react-icons/fa6";
 /* <FaTemperatureArrowUp />; */
 import "./Description.css";
 
-const Description = ({ weather, unit }) => {
-  const tempUnit = unit === "metric" ? "°C" : "°F";
+const Description = ({ weather, units }) => {
+  console.log(units);
+  const tempUnit = units === "imperial" ? "°F" : "°C";
   const cards = [
     {
       id: 1,
@@ -67,7 +68,7 @@ const Description = ({ weather, unit }) => {
             <div>
               <h2>
                 {item.data}
-                {item.unit}
+                {tempUnit}
               </h2>
             </div>
           </div>
